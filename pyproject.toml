@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wirelessroboagent"
+version = "0.1.0"
+description = "Agentic AI and benchmarking for intelligent wireless robotics."
+readme = { text = "Agentic AI and benchmarking for intelligent wireless robotics.", content-type = "text/markdown" }
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "WirelessRoboAgent contributors" }]
+keywords = ["wireless robotics", "wireless communication", "llm", "agentic AI",]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Arktor and Arktor-Bench-SelfEvolution are pinned source dependencies managed
+# as submodules. They are installed from their local pyproject.toml files by
+# environment.yaml rather than duplicated or resolved as unrelated packages.
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "pytest-cov",
+    "ruff>=0.4",
+    "mypy>=1.10",
+    "types-PyYAML>=6.0",
+]
+
+[project.urls]
+Repository = "https://github.com/ygyang11/WirelessRoboAgent"
+Issues = "https://github.com/ygyang11/WirelessRoboAgent/issues"
+
+[tool.setuptools.packages.find]
+namespaces = false
+exclude = ["wirelessroboagent*", "wirelessrobobench*", "tests*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+exclude = [
+    "wirelessroboagent",
+    "wirelessrobobench",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["E501", "F401", "F841", "I001"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = "^(wirelessroboagent/arktor|wirelessrobobench/arktor-bench-selfevolution)/"

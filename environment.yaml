@@ -1,0 +1,47 @@
+name: arktor-com
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pip
+  # Toolchain used by the benchmark tasks and local development.
+  - nodejs=22
+  - go
+  - rust
+  - git
+  - curl
+  - wget
+  - ripgrep
+  - jq
+  - sqlite
+  - unzip
+  - make
+  - compilers
+  - ca-certificates
+  - openssl
+
+  - pip:
+      # Install the two checked-out submodules from their local pyproject.toml files.
+      # Run `conda env create -f environment.yaml` from the repository root.
+      - "-e ./wirelessroboagent/arktor[dev,app,cli]"
+      - "-e ./wirelessrobobench/arktor-bench-selfevolution[dev]"
+      - "-e .[dev]"
+
+      # Common scientific and file-format packages used.
+      - requests
+      - httpx
+      - aiohttp
+      - pyyaml
+      - pandas
+      - numpy
+      - scipy
+      - matplotlib
+      - pillow
+      - beautifulsoup4
+      - lxml
+      - openpyxl
+      - python-docx
+      - rich
+      - tabulate
