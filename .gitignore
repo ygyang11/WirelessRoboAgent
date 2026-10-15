@@ -1,0 +1,50 @@
+# ===== IDE & OS =====
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.*
+pyrightconfig.*
+htmlcov/
+
+# ===== Virtual Environments & Dependencies =====
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ===== Build Artifacts =====
+dist/
+build/
+
+# ===== Project Private Files =====
+arktor-bench.yaml
+arktor.yaml
+/baselines/
+/tests/
+.env
+.claude
+.arktor
+.copilot
+.plan
+.research
+.review
+.arktor-bench
+
+
+# ===== Output & Traces =====
+traces/
+runs/
+outputs/
+results/
