@@ -1,8 +1,8 @@
 [submodule "Arktor"]
-	path = Arktor
+	path = wirelessroboagent/arktor
 	url = https://github.com/ygyang11/Arktor.git
 	branch = research/wireless-robo-agent
 [submodule "Arktor-Bench-SelfEvolution"]
-	path = Arktor-Bench-SelfEvolution
+	path = wirelessrobobench/arktor-bench-selfevolution
 	url = https://github.com/ygyang11/Arktor-Bench-SelfEvolution.git
 	branch = research/wireless-robo-agent
